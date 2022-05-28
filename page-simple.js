@@ -1,5 +1,8 @@
 'use strict'
 
+/**
+ * @param {string} text
+ */
 const simplePage = function(text) {
     /**
      * 
@@ -8,21 +11,23 @@ const simplePage = function(text) {
      * @returns
      */
     const metadata = function(key = '', value = '') {
-        return this
+        return exports
     }
 
     const output = function(output) {
-        
         return output
-            .metadata('Content-Length', text.length)
-            .metadata('JsPages-StatusCode', 200)
-            .metadata('JsPages-Body', text);
+            .statusCode(200)
+            .head('Content-Length', text.length)
+            .head('Content-Type', 'text/plain')
+            .body(text);
     }
 
-    return {
+    const exports = {
         metadata,
         output
     }
+
+    return exports
 }
 
 module.exports = simplePage;

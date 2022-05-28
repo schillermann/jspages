@@ -2,30 +2,38 @@
 
 /**
  * 
- * @param {string} body 
- * @param {Map} headMap
- * @param {number} statusCode 
- * @returns 
+ * @param {string} text
+ * @param {Map<string, string>} headMap
+ * @param {number} code
  */
-const outputSimple = function(body = '', headMap = new Map(), statusCode = 200) {
-    const metadata = function(key, value) {
+const outputSimple = function(text = '', headMap = new Map(), code = 200) {
 
-        switch (key) {
-            case 'JsPages-Body':
-                body = value;
-              break;
-            case 'JsPages-StatusCode':
-                statusCode = value;
-              break;
-            default:
-                headMap.set(key, value);
-          }
-
-        return outputSimple(body, headMap, statusCode);
+    /**
+     * 
+     * @param {string} text
+     */
+    const body = function(text = '') {
+        return outputSimple(text, headMap, code);
     }
 
     /**
      * 
+     * @param {string} key
+     * @param {string} value
+     */
+    const head = function(key = '', value = '') {
+        headMap.set(key, value);
+        return outputSimple(text, headMap, code);
+    }
+
+    /**
+     * @param {number} code
+     */
+    const statusCode = function(code = 200) {
+        return outputSimple(text, headMap, code);
+    }
+
+    /**
      * @param {http.ServerResponse} response 
      */
     const write = function(response) {
@@ -34,14 +42,18 @@ const outputSimple = function(body = '', headMap = new Map(), statusCode = 200) 
             response.setHeader(key, value);
         }
 
-        response.writeHead(statusCode);
-        response.end(body);
+        response.writeHead(code);
+        response.end(text);
     }
 
-    return {
-        metadata,
+    const exports = {
+        body,
+        head,
+        statusCode,
         write
     }
+
+    return exports;
 }
 
 module.exports = outputSimple;
