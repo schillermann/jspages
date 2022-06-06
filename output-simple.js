@@ -1,25 +1,25 @@
 'use strict'
 
 /**
- * 
  * @param {string} text
  * @param {Map<string, string>} headMap
  * @param {number} code
+ * @returns {import('./output').output}
  */
 const outputSimple = function(text = '', headMap = new Map(), code = 200) {
 
     /**
-     * 
      * @param {string} text
+     * @returns {import('./output').output}
      */
     const body = function(text = '') {
         return outputSimple(text, headMap, code);
     }
 
     /**
-     * 
      * @param {string} key
      * @param {string} value
+     *@returns {import('./output').output}
      */
     const head = function(key = '', value = '') {
         headMap.set(key, value);
@@ -28,6 +28,7 @@ const outputSimple = function(text = '', headMap = new Map(), code = 200) {
 
     /**
      * @param {number} code
+     * @returns {import('./output').output}
      */
     const statusCode = function(code = 200) {
         return outputSimple(text, headMap, code);
@@ -35,6 +36,7 @@ const outputSimple = function(text = '', headMap = new Map(), code = 200) {
 
     /**
      * @param {http.ServerResponse} response 
+     * @returns {void}
      */
     const write = function(response) {
     

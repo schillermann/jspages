@@ -2,19 +2,25 @@
 
 /**
  * @param {string} text
+ * @returns {import('./page').page}
  */
-const simplePage = function(text) {
+const simplePage = function(text = '') {
     /**
      * 
      * @param {string} key 
      * @param {string} value 
-     * @returns
+     * @returns {import('./page').page}
      */
     const metadata = function(key = '', value = '') {
         return exports
     }
 
+    /**
+     * @param {import('./output').output} output
+     * @returns {import('./output').output}
+     */
     const output = function(output) {
+
         return output
             .statusCode(200)
             .head('Content-Length', text.length)
@@ -27,7 +33,7 @@ const simplePage = function(text) {
         output
     }
 
-    return exports
+    return exports;
 }
 
 module.exports = simplePage;
