@@ -26,21 +26,11 @@ However, OOP has the concept of encapsulating data and behavior together.
 
 ## Quickstart
 
-This is how you start a web app:
+This is how you start a Web Server:
 
 ```javascript
-"use strict";
+import { webServer } from "jspages/web-server.js";
+import { simplePage } from "jspages/page/simple-page.js";
 
-const pageSimple = require("./page-simple");
-const outputSimple = require("./output-simple");
-
-const http = require("node:http");
-
-const server = http.createServer((req, res) => {
-  const page = pageSimple("Hello World!");
-  const output = outputSimple();
-  page.metadata().output(output).write(res);
-});
-
-server.listen(8000);
+webServer(simplePage("Hello World!")).start();
 ```
