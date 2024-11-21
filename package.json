@@ -1,8 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "format": "prettier --write lib/",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "format": "prettier --list-different --write lib/",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "foo": "prettier"
   },
   "devDependencies": {
     "jest": "^29.7.0",
