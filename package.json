@@ -1,4 +1,6 @@
 {
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "format": "prettier --write lib/",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
@@ -11,7 +13,6 @@
   "exports": {
     "./*": "./lib/*.js"
   },
-  "type": "module",
   "jest": {
     "transform": {}
   }
