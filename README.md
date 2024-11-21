@@ -6,6 +6,11 @@ JsPages is an experimental prototype of a web framework, inspired by [Yegor Buga
 
 It is supposed to be a reference to Alan Kay's Smalltalk and the origin of JavaScript with its lightness.
 
+### Building and transpiling free
+
+Scripting languages ​​like JavaScript were developed to make changes faster and easier, in contrast to compiler languages.
+So you don't need any extra effort to get JsPages framework running.
+
 ### [class](<https://en.wikipedia.org/wiki/Class_(computer_programming)>) free
 
 The keyword class was introduced to align with languages ​​like C++ or Java.
