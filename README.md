@@ -38,3 +38,26 @@ import { page, webServer } from "jspages";
 
 webServer(page.simplePage("Hello World!")).start();
 ```
+
+## Web Server page with route
+
+```javascript
+import { page, webServer } from "jspages";
+
+webServer({
+  withMetadata: function (name, value) {
+    if (name !== page.pageInterface.PATH) {
+      return this;
+    }
+
+    if (value === "/profile") {
+      return page.textPage("It's me. It's Mario.");
+    }
+
+    return this;
+  },
+  viaOutput: function (output) {
+    return output.withMetadata(page.pageInterface.STATUS_CODE, "404");
+  },
+}).start();
+```
