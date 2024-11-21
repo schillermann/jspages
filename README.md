@@ -29,8 +29,7 @@ However, OOP has the concept of encapsulating data and behavior together.
 This is how you start a Web Server:
 
 ```javascript
-import { webServer } from "jspages/web-server.js";
-import { simplePage } from "jspages/page/simple-page.js";
+import { page, webServer } from "jspages";
 
-webServer(simplePage("Hello World!")).start();
+webServer(page.simplePage("Hello World!")).start();
 ```

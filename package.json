@@ -1,5 +1,4 @@
 {
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "format": "prettier --write lib/",
@@ -11,6 +10,9 @@
     "prettier-plugin-jsdoc": "^1.3.0"
   },
   "exports": {
+    ".": "./lib/index.js",
+    "./output": "./lib/output/index.js",
+    "./page": "./lib/page/index.js",
     "./*": "./lib/*.js"
   },
   "jest": {
