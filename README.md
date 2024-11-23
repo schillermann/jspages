@@ -2,6 +2,10 @@
 
 JsPages is an experimental prototype of a web framework, inspired by [Yegor Bugayenko](https://www.yegor256.com/) with the project [jpages](https://github.com/yegor256/jpages).
 
+Check also my related projects out.
+
+1. [PhpPages](https://github.com/schillermann/phppages)
+
 ## Concept of the Framework
 
 It is supposed to be a reference to Alan Kay's Smalltalk and the origin of JavaScript with its lightness.
