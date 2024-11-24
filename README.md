@@ -54,7 +54,7 @@ import { page, webServer } from "jspages";
 
 webServer({
   withMetadata: function (name, value) {
-    if (name !== page.pageInterface.PATH) {
+    if (name !== page.pageMetadataNames.PATH) {
       return this;
     }
 
@@ -65,7 +65,7 @@ webServer({
     return this;
   },
   viaOutput: function (output) {
-    return output.withMetadata(page.pageInterface.STATUS_CODE, "404");
+    return output.withMetadata(page.pageMetadataNames.STATUS_CODE, "404");
   },
 }).start();
 ```
