@@ -1,6 +1,6 @@
 # Pages Framework Object Oriented With JavaScript
 
-JsPages is an experimental prototype of a web framework, inspired by [Yegor Bugayenko](https://www.yegor256.com/) with the project [jpages](https://github.com/yegor256/jpages).
+JsPages is an experimental prototype of a Web Framework, inspired by [Yegor Bugayenko](https://www.yegor256.com/) with the project [jpages](https://github.com/yegor256/jpages).
 
 Check also my related projects out.
 
